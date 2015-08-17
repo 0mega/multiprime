@@ -4,45 +4,47 @@
 # Also as primes never change we can cache already calculated ones
 require 'singleton'
 
-class PrimeGen
-	include Singleton
+module Multiprime
+	class PrimeGen
+		include Singleton
 
-	def initialize
-		@primes = []
-	end
-
-	def get_consecutive_primes p_count
-		return [] if p_count < 1
-		return @primes[0..p_count-1] if @primes.length >= p_count
-
-		attempt = 1
-		while @primes.length < p_count do
-			gen_primes_up_to(10**attempt)
-			attempt += 1
+		def initialize
+			@primes = []
 		end
 
-		return @primes[0..p_count-1]
-	end
+		def get_consecutive_primes p_count
+			return [] if p_count < 1
+			return @primes[0..p_count-1] if @primes.length >= p_count
 
-private
-	def gen_primes_up_to number
-		@sieve = Array.new(number, true)
-		@sieve[0] = @sieve[1] = false
-		max_test = Integer(Math.sqrt(number).round)
+			attempt = 1
+			while @primes.length < p_count do
+				gen_primes_up_to(10**attempt)
+				attempt += 1
+			end
 
-		(2..max_test).each do |i|
-			if(@sieve[i])
-				(i**2..number).step(i).each do |j|
-					@sieve[j] = false
+			return @primes[0..p_count-1]
+		end
+
+	private
+		def gen_primes_up_to number
+			@sieve = Array.new(number, true)
+			@sieve[0] = @sieve[1] = false
+			max_test = Integer(Math.sqrt(number).round)
+
+			(2..max_test).each do |i|
+				if(@sieve[i])
+					(i**2..number).step(i).each do |j|
+						@sieve[j] = false
+					end
 				end
 			end
-		end
 
-		@primes = []
-		(2..number).each do |k|
-			@primes.push k if @sieve[k]
-		end
+			@primes = []
+			(2..number).each do |k|
+				@primes.push k if @sieve[k]
+			end
 
-		nil
+			nil
+		end
 	end
 end

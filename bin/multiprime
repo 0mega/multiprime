@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'multiprime'
+
+commandParser = Multiprime::CommandParser.new
+commandParser.parse_args
