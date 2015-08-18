@@ -4,14 +4,24 @@ This gem allows to print multiplication table for first N prime numbers
 
 ## Installation
 
-Add this line to your application's Gemfile:
+* download the gem
+* unpack the gem
+* go to gem root dir
+* run `rake install`
 
-    gem 'multiprime'
+## Usage
 
-And then execute:
+    $ multiprime --count N
 
-    $ bundle
+## Sample output
 
-Or install it yourself as:
+    $ multiprime --count 4
 
-    $ gem install multiprime
+Output:
+
+|   | 2  | 3  | 5  | 7  |
+|---|----|----|----|----|
+| 2 | 4  | 6  | 10 | 14 |
+| 3 | 6  | 9  | 15 | 21 |
+| 5 | 10 | 15 | 25 | 35 |
+| 7 | 14 | 21 | 35 | 49 |
