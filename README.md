@@ -1,6 +1,6 @@
 # Multiprime
 
-This gem allows to print multiplication table for first N prime numbers
+This gem allows to print multiplication table for first N prime or fibonacci numbers
 
 ## Installation
 
@@ -11,11 +11,11 @@ This gem allows to print multiplication table for first N prime numbers
 
 ## Usage
 
-    $ multiprime --count N
+    $ multiprime --alg prime|fib --count N
 
 ## Sample output
 
-    $ multiprime --count 4
+    $ multiprime --alg prime --count 4
 
 Output:
 
