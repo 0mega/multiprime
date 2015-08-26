@@ -20,11 +20,13 @@ Gem::Specification.new do |spec|
                           "bin/multiprime",
                           "lib/multiprime.rb",
                           "lib/multiprime/prime_gen.rb",
+                          "lib/multiprime/fibonacci_gen.rb",
                           "lib/multiprime/table_generator.rb",
                           "lib/multiprime/version.rb",
                           "multiprime.gemspec",
                           "spec/multiprime_spec.rb",
                           "spec/primegen_spec.rb",
+                          "spec/fibonacci_spec.rb",
                           "spec/spec_helper.rb"]
   # `git ls-files -z`.split("\x0")
   spec.executables   = ["multiprime"]
